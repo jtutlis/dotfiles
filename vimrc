@@ -63,6 +63,9 @@ Plugin 'sirtaj/vim-openscad'
 " Indent 
 Plugin 'Yggdroot/indentLine'
 
+" c.vim
+Plugin 'c.vim'
+
 " Vundle Closing
 call vundle#end()
 
