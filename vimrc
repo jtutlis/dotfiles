@@ -40,7 +40,7 @@ Plugin 'ajh17/VimCompletesMe'
 " Plugin 'artur-shaik/vim-javacomplete2'
 
 " Snippets
-Plugin 'SirVer/ultisnips'
+" Plugin 'SirVer/ultisnips'
 
 "vue
 Plugin 'posva/vim-vue'
@@ -93,6 +93,9 @@ filetype plugin indent on
 " User settings
 " Shows syntax
 syntax on
+
+" searches for tag file in current directory then recursively up parent directories
+set tags=./tags;
 
 " Cursor will select things
 set mouse=a
