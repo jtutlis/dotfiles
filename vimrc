@@ -66,6 +66,9 @@ Plugin 'Yggdroot/indentLine'
 " c.vim
 Plugin 'c.vim'
 
+" auto updates ctag
+Plugin 'craigemery/vim-autotag'
+
 " Vundle Closing
 call vundle#end()
 
@@ -136,6 +139,9 @@ color space-vim-dark
 " Toggle Nerd Tree to F2
 map <F2> :NERDTreeToggle<CR>
 
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+
 " Macros for windowed mode
 map <C-h> <C-w>h
 map <C-j> <C-w>j
@@ -165,6 +171,10 @@ map <Leader>' s""<ESC>P
 map <Leader>, s<><ESC>P
 map <Leader>d <ESC>`>x`<x
 
+" Fixes scroll
+map <ScrollWheelUp> 3k
+map <ScrollWheelDown> 3j
+
 " Adding support for moving up and down on wrapped lines
 map j gj
 map k gk
@@ -173,6 +183,9 @@ map k gk
 " Tooken from https://stackoverflow.com/questions/18948491/running-python-code-in-vim
 nnoremap <silent> <F5> :call SaveAndExecutePython()<CR>
 vnoremap <silent> <F5> :<C-u>call SaveAndExecutePython()<CR>
+
+" Fixes colors in terminator
+set t_Co=256
 
 function! SaveAndExecutePython()
     " SOURCE [reusable window]: https://github.com/fatih/vim-go/blob/master/autoload/go/ui.vim
@@ -230,5 +243,4 @@ function! SaveAndExecutePython()
     setlocal readonly
     setlocal nomodifiable
 endfunction
-
 
