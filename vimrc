@@ -131,6 +131,7 @@ set colorcolumn=92
 " 'nuff said
 set encoding=utf-8
 
+
 " Choose color scheme
 colorscheme space-vim-dark
 let g:space_vim_dark_background = 235
@@ -172,20 +173,27 @@ map <Leader>, s<><ESC>P
 map <Leader>d <ESC>`>x`<x
 
 " Fixes scroll
-map <ScrollWheelUp> 3k
-map <ScrollWheelDown> 3j
+map <ScrollWheelUp> 3<C-y> 
+map <ScrollWheelDown> 3<C-e>
 
 " Adding support for moving up and down on wrapped lines
 map j gj
 map k gk
 
+" Fixes colors in terminator
+set t_Co=256
+
+"" Searching
+set incsearch                   " incremental searching
+set ignorecase                  " searches are case insensitive...
+set smartcase  "
+
 " Bind F5 to save file if modified and execute python script in a buffer.
-" Tooken from https://stackoverflow.com/questions/18948491/running-python-code-in-vim
+" stolen from https://stackoverflow.com/questions/18948491/running-python-code-in-vim
 nnoremap <silent> <F5> :call SaveAndExecutePython()<CR>
 vnoremap <silent> <F5> :<C-u>call SaveAndExecutePython()<CR>
 
-" Fixes colors in terminator
-set t_Co=256
+
 
 function! SaveAndExecutePython()
     " SOURCE [reusable window]: https://github.com/fatih/vim-go/blob/master/autoload/go/ui.vim
