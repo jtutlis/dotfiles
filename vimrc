@@ -75,9 +75,11 @@ call vundle#end()
 " CSS coloring
 Plugin 'ap/vim-css-color'
 
+Plugin 'Valloric/YouCompleteMe'
+
 
 let g:NERDTreeDirArrows=0
-
+let g:ycm_global_ycm_extra_conf = '/home/jtutlis/.ymc_extra_conf.py'
 let g:indent_guides_enable_on_vim_startup=1
 let g:indent_guides_auto_colors = 1
 let g:indent_guides_guide_size=1
